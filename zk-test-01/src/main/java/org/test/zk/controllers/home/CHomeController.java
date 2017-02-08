@@ -168,29 +168,7 @@ public class CHomeController extends SelectorComposer<Component> {
 	        if ( tblOperator.getRole().equalsIgnoreCase( "admin" ) ) {
 	        	
 	        	
-	        	   //Creamos el componente a partir del .zul, createComponents crea un arreglo con los dos componentes raices 
-	            components = Executions.getCurrent().createComponents( "/views/tabs/map/tabmap.zul", null );
-	            
-	            //Buscamos el componente de tipo tab
-	            tab = (Tab) ZKUtilities.getComponent( components, "Tab" );      
-	            
-	            if ( tab != null ) {
-	                
-	                //Lo anexamos de manera dinámica a su padre el tabbox del home.zul
-	                tabboxMainContent.getTabs().appendChild( tab );
-	                
-	                //Buscamos el componente de tipo tabpanel
-	                Tabpanel tabPanel = (Tabpanel) ZKUtilities.getComponent( components, "Tabpanel" );      
-	                
-	                //Lo anexamos de manera dinámica a su padre el tabbox del home.zul
-	                if ( tabPanel != null )
-	                    tabboxMainContent.getTabpanels().appendChild( tabPanel );
-	                }
-	        
-	            
-	            
-	            
-	            //Creamos el componente a partir del .zul, createComponents crea un arreglo con los dos componentes raices 
+	           //Creamos el componente a partir del .zul, createComponents crea un arreglo con los dos componentes raices 
 	            components = Executions.getCurrent().createComponents( "/views/tabs/admin/tabadmin.zul", null );
 	            
 	            //Buscamos el componente de tipo tab
@@ -220,6 +198,36 @@ public class CHomeController extends SelectorComposer<Component> {
 	        else if ( tblOperator.getRole().equalsIgnoreCase( "operator.type2" ) ) {
 	            
 	        }
+	        
+	    	        
+	       	 //Creamos el componente a partir del .zul, createComponents crea un arreglo con los dos componentes raices 
+            components = Executions.getCurrent().createComponents( "/views/tabs/map/tabmap.zul", null );
+            
+            //Buscamos el componente de tipo tab
+            tab = (Tab) ZKUtilities.getComponent( components, "Tab" );      
+            
+            if ( tab != null ) {
+                
+                //Lo anexamos de manera dinámica a su padre el tabbox del home.zul
+                tabboxMainContent.getTabs().appendChild( tab );
+                
+                //Buscamos el componente de tipo tabpanel
+                Tabpanel tabPanel = (Tabpanel) ZKUtilities.getComponent( components, "Tabpanel" );      
+                
+                //Lo anexamos de manera dinámica a su padre el tabbox del home.zul
+                if ( tabPanel != null )
+                    tabboxMainContent.getTabpanels().appendChild( tabPanel );
+                }
+        
+            
+        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
 	    }	
 	
 	@Listen ("onClick= #includeNorthContent #buttonChangePassword")
