@@ -1,0 +1,49 @@
+<?page title="Person" contentType="text/html;charset=UTF-8"?>
+<?init class="org.test.zk.security.CCheckAuthenticated"?>
+<zk>
+ <window id="windowsPerson" xmlns:w="client" title="Person" border="normal" hflex="min" apply="org.test.zk.controllers.person.editor.CEditorController">
+   <vlayout width="290px">
+     <grid hflex="min">
+		<rows>
+	     <row>
+		   <label id="labelId" value="Id:" width="150px" />
+		   <textbox id="textboxId" value="" width="150px"  tabindex="1">
+		   	<attribute w:name="doKeyPress_">
+		   		<![CDATA[function(evt){ if (!this._shallIgnore(evt,"0123456789")) this.$doKeyPress_(evt); }]]> 
+            </attribute>
+		   </textbox>
+	     </row>
+		 <row>
+		  <label id="labelFirstName" value="First Name:" width="150px" />
+		  <textbox id="textboxFirstName" value=""	width="180px" tabindex="2">
+		     	<attribute w:name="doKeyPress_">
+		   		<![CDATA[function(evt){ if (!this._shallIgnore(evt,"abcdefghijklmnopqrstuvwxyzñÑABCDEFGHIJKLMNOPQRSTUVWXYZáéíóú ")) this.$doKeyPress_(evt); }]]> 
+            </attribute>
+		   </textbox>
+		</row>
+		<row>
+		  <label id="labelLastName" value="Last Name:" width="150px" />
+		  <textbox id="textboxLastName" value="" width="180px" tabindex="3" />
+       
+		</row>
+		<row>
+          <label id="labelBirthdate" value="Birth Date:" width="150px" />
+		  <datebox id="dateboxBirthDate" format="dd/MM/yyyy" width="150px" tabindex="4" weekOfYear="true"/> 
+        </row>
+		<row>
+		  <label id="labelGender" value="Gender:"  width="150px" />
+		  <selectbox id="selectboxGender" />
+		</row>
+		<row>
+          <label id="labelComment" value="Comment:" width="150px" />
+		  <textbox id="textboxComment" value="" width="200px" tabindex="6" rows="5" />
+        </row>
+       </rows>
+			</grid>
+			<div id="divbuttoncontainer">
+				<button id="buttonAccept" label="accept" style="float:rigth;margin-left:5px" />
+				<button id="buttonCancel" label="cancel" style="float:rigth;margin-left:5px" />
+			</div>
+		</vlayout>
+	</window>
+</zk>

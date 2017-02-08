@@ -1,0 +1,25 @@
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<?init class="org.test.zk.security.CCheckAuthenticated"?>
+<zk>
+
+   <tab id="tabMap" label="Map"/>  <!-- Pestaña -->
+
+   <tabpanel id="tabpanelMap" apply="org.test.zk.controllers.tab.map.CTabMapController">
+
+    <label id="labelcome" value="come" />
+    
+     <button id="buttonPersonManager" label="Person Manager"/>
+     
+	<!-- define the property 'zk.googleAPIkey' (or any other name) 
+		 as a ZK-library-property, VM-arg or system-property ${c:property('zk.googleAPIkey')}
+		 or simply add your APIkey inline instead of ${c:property...} -->
+<!-- 	<script type="text/javascript" content="zk.googleAPIkey='AIzaSyCaocnBJE8ET2RWTX6q9Gts1R7_0u7XtP4'" /> -->
+	<script type="text/javascript" content="zk.googleAPIkey='AIzaSyCaocnBJE8ET2RWTX6q9Gts1R7_0u7XtP4'" />
+ 	<gmaps version="3.26" id="gmaps" width="800px" height="500px" showSmallCtrl="true" protocol="https">
+	<!-- <ginfo id="info" open="true" content="Hello, &lt;a href=&quot;http://www.zkoss.org\&quot;&gt;ZK&lt;/a&gt;."/>  -->
+	<gmarker id="marker" lat="37.4410" lng="-122.1490"	content="contenido"/>
+	</gmaps>
+        
+    </tabpanel>
+
+</zk>

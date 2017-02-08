@@ -1,0 +1,30 @@
+<?page title="Person manager" contentType="text/html;charset=UTF-8"?>
+<?init class="org.test.zk.security.CCheckAuthenticated"?>
+
+<zk>
+	<window id="windowsPersonManager" xmlns:w="client" title="Person manager" position="center,center" border="normal" apply="org.test.zk.controllers.person.manager.CManagerController">
+		<vlayout width="500px">
+		<listbox id="listboxperson" width="100%" height="350px">
+          <listhead sizable="true">
+            <listheader label="Id" width="100px"/>
+            <listheader label="First Name" width="100px"/>
+            <listheader label="Last Name" width="100px"/>
+            <listheader label="Gender" width="100px"/>
+            <listheader label="Birth Date" width="150px"/>
+            <listheader label="Comments" width="250px"/>
+        </listhead>				
+		</listbox>
+		
+		<div id="divbuttoncontainer">
+			<!-- botones para las acciones -->
+			<button id="buttonRefresh" label="Refresh"  /> 
+<!--			<button id="buttonConnectionToDB" label="Connect"  /> --> 
+			<button id="buttonAdd" label="Add" style="float:rigth;margin-left:5px" /> 
+			<button id="buttonModify" label="Modify" style="float:rigth;margin-left:5px" />
+			<button id="buttonDelete" label="Delete" style="float:rigth;margin-left:5px" />
+			<button id="buttonClose" label="Close" style="float:rigth;margin-left:5px" />
+		</div>
+		
+	</vlayout>
+	</window>
+</zk>
