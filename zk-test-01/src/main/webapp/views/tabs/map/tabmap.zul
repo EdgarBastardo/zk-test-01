@@ -13,16 +13,37 @@
 			or simply add your APIkey inline instead of ${c:property...} -->
 
 
-		<gmaps version="3.26" id="gmaps" width="800px" height="500px"  showSmallCtrl="true" protocol="https">
+	        <gmaps version="3.26" id="gmaps" width="800px" height="300px"  showSmallCtrl="true" protocol="https">
 
 			<ginfo id="info" open="true" lat="10.974860" lng="-63.870734" content="centro de operaciones"/>
 
-			<gmarker id="COB2" lat="10.962469" lng="-63.862830" content="centro de operaciones Base 2" />
+			<gmarker id="gmarkerCOB2" lat="10.962469" lng="-63.862830" content="centro de operaciones Base 2" />
 			
-			<gmarker id="COB1" lat="10.941932" lng="-63.904626" content="centro de operaciones Base 1" />
+			<gmarker id="gmarkerCOB1" lat="10.941932" lng="-63.904626" content="centro de operaciones Base 1" />
 			
 		</gmaps>
-		
+ <vlayout width="400px">
+ <grid apply="org.test.zk.controllers.googleMaps.CGoogleMapsConfigController">
+		<rows>
+			<row>
+				<label value="Latitude:" />
+				<doublebox id="latitude" hflex="1" />
+			</row>
+			<row>
+				<label value="Longitude:"/> 
+				<doublebox id="longitude" hflex="1" />
+			</row>
+			<row>
+				<label value="Zoom Level:"/> 
+				<intbox id="zoom" hflex="1" />
+			</row>
+			<row>
+				<label value="Open Info:"/>
+				<button id="buttontoggleInfo" label="Toggle Info" hflex="1" />
+			</row>
+		</rows>
+	</grid>
+	 </vlayout>
 	</tabpanel>
 
 </zk>

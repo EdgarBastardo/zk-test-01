@@ -22,7 +22,7 @@ public class CGoogleMapsConfigController extends SelectorComposer<Component> {
 	private Ginfo info;
 	
 	@Wire
-	private Gmarker marker;
+	private Gmarker gmarkerCOB1;
 	
 	@Wire
 	private Doublebox latitude, longitude;
@@ -49,16 +49,17 @@ public class CGoogleMapsConfigController extends SelectorComposer<Component> {
 		gmaps.setZoom(zoom.getValue());
 	}
 
-	@Listen("onClick = #toggleInfo") 
+	@Listen("onClick = #buttontoggleInfo") 
 	public void onToggleInfo() {
 		if (info.isOpen()) {
-			marker.setOpen(true);
+			gmarkerCOB1.setOpen(true);
 			info.setOpen(false);
 		} else {
-			marker.setOpen(false);
+			gmarkerCOB1.setOpen(false);
 			info.setOpen(true);
 		}
-	}	
+	}
+		
 	
 	@Listen("onMapMove = #gmaps") 
 	public void onMapMove() {
